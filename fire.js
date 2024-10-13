@@ -14,9 +14,9 @@ document.addEventListener("DOMContentLoaded", function () {
 	const reseed = () => {
 		for (let x = 0; x < width; x++) {
 			let index = (x * 4) + 0 * (width * 4);
-			pixels[index] = Math.floor(Math.random() * 255);
-			pixels[index + 1] = 0;
-			pixels[index + 2] = Math.floor(Math.random() * 50);
+			pixels[index] = Math.floor(Math.random() * 200);
+			pixels[index + 1] = Math.floor(Math.random() * 200);
+			pixels[index + 2] = Math.floor(Math.random() * 200);
 			pixels[index + 3] = 255;
 		}
 	}
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
 					let factor = 1 + magnitude * decay;
 
 					pixels[index] = Math.max(0, (pixels[aboveIndex] * factor + pixels[index]) / (factor + .92) - 1);
-					pixels[index + 1] = 0;
+					pixels[index + 1] = Math.max(0, (pixels[aboveIndex + 1] * factor + pixels[index + 1]) / (factor + .92) - 1);
 					pixels[index + 2] = Math.max(0, (pixels[aboveIndex + 2] * factor + pixels[index + 2]) / (factor + .92) - 1);
 					pixels[index + 3] = 255;
 				}

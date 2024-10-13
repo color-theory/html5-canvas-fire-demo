@@ -7,19 +7,9 @@ document.addEventListener("DOMContentLoaded", function () {
 	const imageData = ctx.createImageData(width, height);
 	let pixels = imageData.data;
 
-	const timingIntervalSlider = document.getElementById('timingInterval');
-	const magnitudeSlider = document.getElementById('magnitude');
-
 	let lastTime = 0;
-	let timingInterval = parseInt(timingIntervalSlider.value, 10);
-	let magnitude = parseInt(magnitudeSlider.value, 10);
-
-	timingIntervalSlider.oninput = function () {
-		timingInterval = parseInt(this.value, 10);
-	}
-	magnitudeSlider.oninput = function () {
-		magnitude = parseInt(this.value, 10);
-	}
+	let timingInterval = 30;
+	let magnitude = 8;
 
 	const reseed = () => {
 		for (let x = 0; x < width; x++) {

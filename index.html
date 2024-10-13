@@ -9,7 +9,11 @@
 </head>
 
 <body>
-	<canvas id="fireCanvas" width="320" height="200"></canvas>
+	<div id="formControls">
+		<input type="range" id="timingInterval" min="1" max="100" value="30">
+		<input type="range" id="magnitude" min="1" max="20" value="8">
+	</div>
+	<canvas id="fireCanvas" width="640" height="480"></canvas>
 	<script src="fire.js"></script>
 </body>
 

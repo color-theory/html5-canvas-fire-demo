@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
 					let centerEffect = Math.abs(width / 2 - x) / (width / 2);
 					let coolingEffect = 0.1 + 0.9 * (Math.sin(Math.PI * centerEffect) ** 2);
 					let decay = Math.exp(-y / (height * coolingEffect * 10));
-					let factor = 1 + magnitude * decay; // Dynamic factor based on position and magnitude
+					let factor = 1 + magnitude * decay;
 
 					pixels[index] = Math.max(0, (pixels[aboveIndex] * factor + pixels[index]) / (factor + .92) - 1);
 					pixels[index + 1] = 0;

@@ -18,13 +18,3 @@ canvas {
 	padding: 0;
 	margin: 0;
 }
-
-#formControls {
-	display: none;
-	position: absolute;
-	top: 0;
-	left: 0;
-	color: #fff;
-	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-	font-size: 15px;
-}

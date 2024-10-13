@@ -9,8 +9,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	const timingIntervalSlider = document.getElementById('timingInterval');
 	const magnitudeSlider = document.getElementById('magnitude');
-	const timingIntervalValue = document.getElementById('timingIntervalValue');
-	const magnitudeValue = document.getElementById('magnitudeValue');
 
 	let lastTime = 0;
 	let timingInterval = parseInt(timingIntervalSlider.value, 10);

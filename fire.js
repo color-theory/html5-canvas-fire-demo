@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	let lastTime = 0;
 	let timingInterval = 30;
-	let magnitude = 8;
+	let magnitude = 9;
 	let hueShift = 0;
 
 	function hslToRgb(h, s, l) {
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			let index = (x * 4) + 0 * (width * 4);
 			let hue = (hueShift + (x / width / 4) * 360) % 360;
 			let saturation = 90 + Math.random() * 20;
-			let lightness = 20 + Math.random() * 20;
+			let lightness = 10 + Math.random() * 30;
 
 
 			let [r, g, b] = hslToRgb(hue, saturation, lightness);
@@ -58,8 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
 				for (let x = 0; x < width; x++) {
 					let index = (x * 4) + y * (width * 4);
 					let aboveIndex = (x * 4) + (y - 1) * (width * 4);
-					let centerEffect = Math.abs(width / 2 - x) / (width / 2);
-					let coolingEffect = 0.1 + 0.9 * (Math.sin(Math.PI * centerEffect) ** 2);
+					let coolingEffect = 0.1 + 0.9 * (Math.sin(Math.PI) ** 2);
 					let decay = Math.exp(-y / (height * coolingEffect * 10));
 					let factor = 1 + magnitude * decay;
 

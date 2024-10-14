@@ -12,9 +12,8 @@ body {
 }
 
 canvas {
-	height: 100vh;
+	display: block;
 	width: 100vw;
-	object-fit: cover;
-	padding: 0;
-	margin: 0;
+	height: 100vh;
+	image-rendering: pixelated;
 }

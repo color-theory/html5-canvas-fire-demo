@@ -75,10 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		requestAnimationFrame(updateCanvas);
 	}
 	reseed();
-	console.log(
-		`   /\\_/\\
-  ( o.o )
-   > ^ <`);
+	console.log(`   /\\_/\\\n  ( o.o )\n   > ^ <`);
 	console.log("Hey, I'm looking for a job! If you like this, please consider hiring me! https://johnstringer.com/");
 	requestAnimationFrame(updateCanvas);
 });

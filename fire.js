@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
 	const canvas = document.getElementById('fireCanvas');
 	const ctx = canvas.getContext('2d');
 
-	const lowResWidth = 320;
-	const lowResHeight = 200;
+	const lowResWidth = 640;
+	const lowResHeight = 480;
 	canvas.width = lowResWidth;
 	canvas.height = lowResHeight;
 
@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		let canvasX = Math.floor((x / rect.width) * lowResWidth);
 		let canvasY = Math.floor((y / rect.height) * lowResHeight);
 
-		let radius = 15;
+		let radius = 10;
 		for (let dy = -radius; dy <= radius; dy++) {
 			for (let dx = -radius; dx <= radius; dx++) {
 				let nx = canvasX + dx;

@@ -10,15 +10,46 @@ document.addEventListener("DOMContentLoaded", function () {
 	let lastTime = 0;
 	let timingInterval = 30;
 	let magnitude = 8;
+	let hueShift = 0;
+
+	function hslToRgb(h, s, l) {
+		s /= 100;
+		l /= 100;
+		let c = (1 - Math.abs(2 * l - 1)) * s;
+		let x = c * (1 - Math.abs((h / 60) % 2 - 1));
+		let m = l - c / 2;
+		let r = 0, g = 0, b = 0;
+
+		if (0 <= h && h < 60) { r = c; g = x; b = 0; }
+		else if (60 <= h && h < 120) { r = x; g = c; b = 0; }
+		else if (120 <= h && h < 180) { r = 0; g = c; b = x; }
+		else if (180 <= h && h < 240) { r = 0; g = x; b = c; }
+		else if (240 <= h && h < 300) { r = x; g = 0; b = c; }
+		else if (300 <= h && h < 360) { r = c; g = 0; b = x; }
+
+		r = Math.round((r + m) * 255);
+		g = Math.round((g + m) * 255);
+		b = Math.round((b + m) * 255);
+
+		return [r, g, b];
+	}
 
 	const reseed = () => {
 		for (let x = 0; x < width; x++) {
 			let index = (x * 4) + 0 * (width * 4);
-			pixels[index] = Math.floor(Math.random() * 200);
-			pixels[index + 1] = Math.floor(Math.random() * 200);
-			pixels[index + 2] = Math.floor(Math.random() * 200);
+			let hue = (hueShift + (x / width / 4) * 360) % 360;
+			let saturation = 90 + Math.random() * 20;
+			let lightness = 20 + Math.random() * 20;
+
+
+			let [r, g, b] = hslToRgb(hue, saturation, lightness);
+
+			pixels[index] = r;
+			pixels[index + 1] = g;
+			pixels[index + 2] = b;
 			pixels[index + 3] = 255;
 		}
+		hueShift = (hueShift + 1) % 360;  // Slowly shift hue over time
 	}
 
 	function updateCanvas(timestamp) {

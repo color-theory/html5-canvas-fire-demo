@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	let pixels = imageData.data;
 
 	let lastTime = 0;
-	let timingInterval = 30;
+	let timingInterval = 20;
 	let magnitude = 9;
 	let hueShift = 0;
 
@@ -37,9 +37,9 @@ document.addEventListener("DOMContentLoaded", function () {
 	const reseed = () => {
 		for (let x = 0; x < width; x++) {
 			let index = (x * 4) + 0 * (width * 4);
-			let hue = (hueShift + (x / width / 4) * 360) % 360;
-			let saturation = 90 + Math.random() * 20;
-			let lightness = 10 + Math.random() * 30;
+			let hue = (hueShift + (x / width / 8) * 360) % 360;
+			let saturation = 30 + Math.random() * 50;
+			let lightness = 9 + Math.random() * 40;
 
 
 			let [r, g, b] = hslToRgb(hue, saturation, lightness);
@@ -58,8 +58,8 @@ document.addEventListener("DOMContentLoaded", function () {
 				for (let x = 0; x < width; x++) {
 					let index = (x * 4) + y * (width * 4);
 					let aboveIndex = (x * 4) + (y - 1) * (width * 4);
-					let coolingEffect = 0.1 + 0.9 * (Math.sin(Math.PI) ** 2);
-					let decay = Math.exp(-y / (height * coolingEffect * 10));
+					let coolingEffect = 0.1 + 0.8 * (Math.sin(Math.PI + y) ** 2);
+					let decay = Math.exp(-y / (height * coolingEffect * 3));
 					let factor = 1 + magnitude * decay;
 
 					pixels[index] = Math.max(0, (pixels[aboveIndex] * factor + pixels[index]) / (factor + .92) - 1);

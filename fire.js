@@ -94,10 +94,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 					heatMap[y * lowResWidth + x] *= 0.3;
 					let heat = heatMap[y * lowResWidth + x];
-
-					r = Math.max(0, (pixels[aboveIndex] * factor + pixels[index]) / (factor + .92) - 1);
-					g = Math.max(0, (pixels[aboveIndex + 1] * factor + pixels[index + 1]) / (factor + .92) - 1);
-					b = Math.max(0, (pixels[aboveIndex + 2] * factor + pixels[index + 2]) / (factor + .92) - 1);
+					let heatintensity = Math.min(heat / 5, 20);
+					r = Math.max(0, (pixels[aboveIndex] * factor + pixels[index]) / (factor + .92) - 1) + heatintensity;
+					g = Math.max(0, (pixels[aboveIndex + 1] * factor + pixels[index + 1]) / (factor + .92) - 1) + heatintensity;
+					b = Math.max(0, (pixels[aboveIndex + 2] * factor + pixels[index + 2]) / (factor + .92) - 1) + heatintensity;
 
 					if (heat > 0) {
 						let [h, s, l] = rgbToHsl(r, g, b);
@@ -131,13 +131,17 @@ document.addEventListener("DOMContentLoaded", function () {
 		let canvasX = Math.floor((x / rect.width) * lowResWidth);
 		let canvasY = Math.floor((y / rect.height) * lowResHeight);
 
-		let radius = 20;
+		const aspectX = rect.width / lowResWidth;
+		const aspectY = rect.height / lowResHeight;
+
+		let radius = 50;
 		for (let dy = -radius; dy <= radius; dy++) {
 			for (let dx = -radius; dx <= radius; dx++) {
 				let nx = canvasX + dx;
 				let ny = canvasY + dy;
+				let distance = ((dx * aspectX) ** 2 + (dy * aspectY) ** 2) ** 0.5;
 
-				if (nx >= 0 && nx < lowResWidth && ny >= 0 && ny < lowResHeight && (dx * dx + dy * dy <= radius * radius)) {
+				if (nx >= 0 && nx < lowResWidth && ny >= 0 && ny < lowResHeight && distance <= radius) {
 					heatMap[ny * lowResWidth + nx] = Math.min(heatMap[ny * lowResWidth + nx] + 30, 360);
 				}
 			}

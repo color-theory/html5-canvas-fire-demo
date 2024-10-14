@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			pixels[index + 2] = b;
 			pixels[index + 3] = 255;
 		}
-		hueShift = (hueShift + 1) % 360;  // Slowly shift hue over time
+		hueShift = (hueShift + 1) % 360;
 	}
 
 	function updateCanvas(timestamp) {

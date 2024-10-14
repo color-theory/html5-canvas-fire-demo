@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
 	const canvas = document.getElementById('fireCanvas');
 	const ctx = canvas.getContext('2d');
 
-	const lowResWidth = 640;
-	const lowResHeight = 480;
+	const lowResWidth = 320;
+	const lowResHeight = 200;
 	canvas.width = lowResWidth;
 	canvas.height = lowResHeight;
 

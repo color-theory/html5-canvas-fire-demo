@@ -76,10 +76,9 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 	reseed();
 	console.log(
-		` /\\_/\\
-  ( o.o )
-   > ^ <
-`);
+		`   /\\_/\\
+   ( o.o )
+   > ^ <`);
 	console.log("Hey, I'm looking for a job! If you like this, please consider hiring me! https://johnstringer.com/");
 	requestAnimationFrame(updateCanvas);
 });

@@ -95,9 +95,9 @@ document.addEventListener("DOMContentLoaded", function () {
 					heatMap[y * lowResWidth + x] *= 0.3;
 					let heat = heatMap[y * lowResWidth + x];
 
-					r = Math.max(0, (pixels[aboveIndex] * factor + pixels[index]) / (factor + .92) - 1) + heat / 4;
-					g = Math.max(0, (pixels[aboveIndex + 1] * factor + pixels[index + 1]) / (factor + .92) - 1) + heat / 4;
-					b = Math.max(0, (pixels[aboveIndex + 2] * factor + pixels[index + 2]) / (factor + .92) - 1) + heat / 4;
+					r = Math.max(0, (pixels[aboveIndex] * factor + pixels[index]) / (factor + .92) - 1);
+					g = Math.max(0, (pixels[aboveIndex + 1] * factor + pixels[index + 1]) / (factor + .92) - 1);
+					b = Math.max(0, (pixels[aboveIndex + 2] * factor + pixels[index + 2]) / (factor + .92) - 1);
 
 					if (heat > 0) {
 						let [h, s, l] = rgbToHsl(r, g, b);

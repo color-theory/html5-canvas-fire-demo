@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		let canvasX = Math.floor((x / rect.width) * lowResWidth);
 		let canvasY = Math.floor((y / rect.height) * lowResHeight);
 
-		let radius = 30;
+		let radius = 20;
 		for (let dy = -radius; dy <= radius; dy++) {
 			for (let dx = -radius; dx <= radius; dx++) {
 				let nx = canvasX + dx;

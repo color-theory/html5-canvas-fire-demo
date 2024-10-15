@@ -31,9 +31,6 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan ${{ secrets.SERVER_IP }} >> ~/.ssh/known_hosts
 
-      - name: Debug SSH setup
-        run: ls -la ~/.ssh
-
       - name: Deploy to server
         run: |
           scp -r dist/* ${{ secrets.DEPLOY_USER }}@${{ secrets.SERVER_IP }}:${{ secrets.SITE_PATH }}

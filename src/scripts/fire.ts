@@ -144,7 +144,7 @@ function initializeFireCanvas() {
 	canvas.addEventListener('touchend', stopHold);
 
 	console.log(`   /\\_/\\\n  ( o.o )\n   > ^ <`);
-	console.log("Hey, I'm looking for a job! If you like this, please consider hiring me! https://johnstringer.com/");
+	console.log("Hey, I'm looking for a job! If you like this, please consider hiring me! https://johnstringer.com/ testing deployment");
 
 	reseed();
 	requestAnimationFrame(updateCanvas);

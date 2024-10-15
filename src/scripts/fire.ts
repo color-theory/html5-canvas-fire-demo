@@ -1,4 +1,4 @@
-import { hslToRgb, rgbToHsl } from './rgbhsl';
+import { hslToRgb, rgbToHsl } from './rgbhsl.js';
 
 function initializeFireCanvas() {
 	const canvas = document.getElementById('fireCanvas') as HTMLCanvasElement;

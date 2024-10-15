@@ -1,0 +1,24 @@
+{
+  "name": "html5-canvas-fire-demo",
+  "version": "1.0.0",
+  "description": "A simple visual demo using html5 canvas and javascript",
+  "main": "fire.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc && npm run copy-assets",
+    "copy-assets": "cp -R src/styles dist/styles && cp src/index.html dist && cp src/favicon.ico dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/color-theory/html5-canvas-fire-demo.git"
+  },
+  "author": "color",
+  "license": "JSON",
+  "bugs": {
+    "url": "https://github.com/color-theory/html5-canvas-fire-demo/issues"
+  },
+  "homepage": "https://github.com/color-theory/html5-canvas-fire-demo#readme",
+  "dependencies": {
+    "typescript": "^5.6.3"
+  }
+}

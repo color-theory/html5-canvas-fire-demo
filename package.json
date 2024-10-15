@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc && npm run copy-assets",
-    "copy-assets": "cp -R src/assets dist/assets && cp -R src/styles dist/styles && cp src/index.html dist && cp src/favicon.ico dist"
+    "copy-assets": "cp -R src/styles dist/styles && cp src/index.html dist && cp src/favicon.ico dist"
   },
   "repository": {
     "type": "git",

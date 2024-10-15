@@ -37,5 +37,4 @@ jobs:
       - name: Deploy to server
         run: |
           scp -r dist/* ${{ secrets.DEPLOY_USER }}@${{ secrets.SERVER_IP }}:${{ secrets.SITE_PATH }}
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}  
+

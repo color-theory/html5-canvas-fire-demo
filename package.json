@@ -20,5 +20,8 @@
   "homepage": "https://github.com/color-theory/html5-canvas-fire-demo#readme",
   "dependencies": {
     "typescript": "^5.6.3"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
   }
 }
